@@ -29,7 +29,7 @@ selected_movie_name = st.selectbox(
 Movies['title'].values)
 
 if st.button('Recommend'):
-    st.subheader(f"Because you liked {selected_movie_name} top 5 movies similarly to {selected_movie_name} are recommended.")
+    st.subheader(f"Because you liked {selected_movie_name}.\n Similarly movies are.")
     recommendations = recommend(selected_movie_name)
     for number, movie in enumerate(recommendations, 1):
         st.write(f"{number}. {movie}")
