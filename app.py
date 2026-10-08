@@ -8,13 +8,13 @@ with open("style.css","r") as f:
 st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
 
 def recommend(movie):
-    movie_index = Movies[Movies['title'] == movie].index[0]
-    distances = similarity[movie_index]
-    movies_list = sorted(list(enumerate(distances)), reverse=True, key=lambda x: x[1])[1:6]
+    movie_index = Movies[Movies["title"] == movie].index[0]
+    similar_movies = similarity[movie_index]
 
     recommended_movies = []
-    for i in movies_list:
-        recommended_movies.append(Movies.iloc[i[0]].title)
+    for movie_data in similar_movies:
+        movie_index = movie_data[0]
+        recommended_movies.append(Movies.iloc[movie_index]["title"])
     return recommended_movies
 
 Movies_dict = pickle.load(open('Movies_dict.pkl', 'rb'))
@@ -22,7 +22,7 @@ Movies = pd.DataFrame(Movies_dict)
 
 similarity = pickle.load(open('similarity.pkl', 'rb'))
 
-st.title('Movie Recommender System')
+st.markdown('<h1 class="movie-title">Movie Recommendation System</h1>', unsafe_allow_html=True)
 
 selected_movie_name = st.selectbox(
 'Select a Movie',

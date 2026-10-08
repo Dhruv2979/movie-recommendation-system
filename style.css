@@ -1,231 +1,392 @@
-/* ==============================
-   MAIN PAGE
-   ============================== */
+/* =========================================================
+   MOVIE RECOMMENDATION SYSTEM
+   DARK GREY UI
+   ========================================================= */
 
+html,
+body,
 .stApp {
-    background: #0f1115 !important;
+    background: #303030 !important;
     color: #ffffff !important;
 }
 
+[data-testid="stAppViewContainer"] {
+    background: #303030 !important;
+}
 
-/* ==============================
-   MAIN TITLE
-   ============================== */
+[data-testid="stHeader"] {
+    background: #303030 !important;
+}
 
-h1 {
-    color: #ffffff !important;
+/* Main page spacing */
+.block-container {
+    max-width: 900px !important;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    padding-left: 25px !important;
+    padding-right: 25px !important;
+    background: transparent !important;
+}
+
+/* Remove unnecessary gaps */
+div[data-testid="stVerticalBlock"] {
+    gap: 0.35rem !important;
+}
+
+div[data-testid="stElementContainer"] {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.movie-title {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    color: white !important;
+    -webkit-text-fill-color: white !important;
+
     text-align: center !important;
     font-size: 42px !important;
-    font-weight: 700 !important;
-    margin-bottom: 30px !important;
+    font-weight: 800 !important;
+
+    margin: 0 0 22px 0 !important;
+    padding: 0 !important;
+
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+
+    position: relative !important;
+    z-index: 999999 !important;
 }
 
+@media (max-width: 768px) {
+    .movie-title {
+        font-size: 30px !important;
+        margin-bottom: 18px !important;
+    }
+}
 
-/* ==============================
-   SELECT MOVIE LABEL
-   ============================== */
+@media (max-width: 480px) {
+    .movie-title {
+        font-size: 27px !important;
+        margin-bottom: 16px !important;
+    }
+}
+/* =========================================================
+   SELECT MOVIE BOX
+   ========================================================= */
+
+.stSelectbox {
+    background: #3b3b3b !important;
+    border: 1px solid #505050 !important;
+    border-radius: 14px !important;
+
+    padding: 16px !important;
+
+    margin-top: 0 !important;
+    margin-bottom: 10px !important;
+
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25) !important;
+}
 
 .stSelectbox label {
     color: #ffffff !important;
     font-size: 18px !important;
-    font-weight: 600 !important;
+    font-weight: 700 !important;
+    margin-bottom: 6px !important;
 }
 
-
-/* ==============================
-   SELECTED MOVIE BOX
-   WHITE BOX + BLACK TEXT
-   WORKS ON DESKTOP + MOBILE
-   ============================== */
-
-.stSelectbox > div > div {
-    background-color: #ffffff !important;
-    border: 1px solid #596170 !important;
-    border-radius: 10px !important;
-    min-height: 46px !important;
+.stSelectbox label p {
+    color: #ffffff !important;
 }
 
-
-/* BaseWeb select */
+/* Selected movie box */
 .stSelectbox [data-baseweb="select"] {
-    background-color: #ffffff !important;
+    background: #ffffff !important;
     color: #000000 !important;
+
+    border: 2px solid #ffffff !important;
+    border-radius: 10px !important;
+
+    min-height: 50px !important;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3) !important;
 }
 
-
-/* Inner selected movie area */
-.stSelectbox [data-baseweb="select"] > div {
-    background-color: #ffffff !important;
+/* Selected movie text */
+.stSelectbox [data-baseweb="select"] * {
     color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
 }
 
-
-/* All text inside selected movie box */
-.stSelectbox [data-baseweb="select"] div,
 .stSelectbox [data-baseweb="select"] span,
-.stSelectbox [data-baseweb="select"] input {
+.stSelectbox [data-baseweb="select"] p,
+.stSelectbox [data-baseweb="select"] div {
     color: #000000 !important;
     -webkit-text-fill-color: #000000 !important;
     font-weight: 600 !important;
 }
 
-
-/* Selected value */
-.stSelectbox [data-baseweb="select"] [class*="singleValue"] {
-    color: #000000 !important;
-    -webkit-text-fill-color: #000000 !important;
-}
-
-
-/* Search input */
+/* Input text */
 .stSelectbox input {
-    background-color: #ffffff !important;
+    background: #ffffff !important;
     color: #000000 !important;
     -webkit-text-fill-color: #000000 !important;
 }
 
-
-/* Search placeholder */
-.stSelectbox input::placeholder {
-    color: #000000 !important;
-    -webkit-text-fill-color: #000000 !important;
-    opacity: 1 !important;
+/* Select box hover */
+.stSelectbox [data-baseweb="select"]:hover {
+    border-color: #e50914 !important;
+    box-shadow: 0 0 0 2px rgba(229,9,20,0.25) !important;
 }
 
-
-/* ==============================
-   DROPDOWN MOVIE LIST
-   ============================== */
+/* =========================================================
+   DROPDOWN
+   ========================================================= */
 
 [data-baseweb="popover"] {
-    background-color: #303640 !important;
+    background: #252525 !important;
+    border: 1px solid #555555 !important;
+    border-radius: 10px !important;
 }
 
-
-/* Dropdown text */
-[data-baseweb="popover"] div,
-[data-baseweb="popover"] span {
-    color: #ffffff !important;
-}
-
-
-/* Individual movie option */
 [role="option"] {
-    background-color: #303640 !important;
+    background: #252525 !important;
     color: #ffffff !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
 }
 
-
-/* Text inside movie option */
 [role="option"] * {
     color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
 }
 
-
-/* Hover movie */
 [role="option"]:hover {
-    background-color: #e50914 !important;
-    color: #ffffff !important;
+    background: #e50914 !important;
 }
 
-
-/* ==============================
+/* =========================================================
    RECOMMEND BUTTON
-   ============================== */
+   ========================================================= */
+
+.stButton {
+    margin-top: 3px !important;
+    margin-bottom: 12px !important;
+    padding: 0 !important;
+}
 
 .stButton > button {
     width: 100% !important;
-    background-color: #e50914 !important;
+    min-height: 52px !important;
+
+    background: #e50914 !important;
     color: #ffffff !important;
+
     border: none !important;
     border-radius: 10px !important;
-    padding: 10px 20px !important;
+
     font-size: 17px !important;
-    font-weight: 600 !important;
-    margin-top: 15px !important;
-    min-height: 46px !important;
+    font-weight: 800 !important;
+
+    transition: all 0.25s ease !important;
+
+    box-shadow: 0 5px 15px rgba(229,9,20,0.25) !important;
 }
 
+.stButton > button p {
+    color: #ffffff !important;
+    font-weight: 800 !important;
+}
 
-/* Button hover */
+/* Mouse hover */
 .stButton > button:hover {
-    background-color: #b20710 !important;
-    color: #ffffff !important;
-    border: none !important;
+    background: #ff1a25 !important;
+
+    transform: translateY(-3px) !important;
+
+    box-shadow:
+        0 9px 25px rgba(229,9,20,0.45),
+        0 0 15px rgba(229,9,20,0.2) !important;
 }
 
-
-/* ==============================
-   SUBHEADER / RECOMMENDATION TEXT
-   ============================== */
-
-h2,
-h3 {
-    color: #ffffff !important;
+.stButton > button:active {
+    transform: translateY(0) !important;
 }
 
+/* =========================================================
+   RECOMMENDATION HEADING
+   ========================================================= */
 
-/* ==============================
+h2 {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+
+    background: #3b3b3b !important;
+
+    border-left: 4px solid #e50914 !important;
+    border-top: 1px solid #505050 !important;
+    border-right: 1px solid #505050 !important;
+    border-bottom: 1px solid #505050 !important;
+
+    border-radius: 10px !important;
+
+    padding: 13px 16px !important;
+
+    margin-top: 3px !important;
+    margin-bottom: 10px !important;
+
+    font-size: 21px !important;
+    font-weight: 700 !important;
+
+    line-height: 1.4 !important;
+}
+
+/* =========================================================
    RECOMMENDED MOVIES
-   ============================== */
+   ========================================================= */
 
-.stMarkdown p,
-.stWrite {
-    color: #ffffff !important;
-    font-size: 17px !important;
+.stMarkdown {
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
+.stMarkdown p {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
 
-/* ==============================
-   MOBILE RESPONSIVE
-   ============================== */
+    background: #3b3b3b !important;
+
+    border: 1px solid #505050 !important;
+    border-radius: 9px !important;
+
+    padding: 10px 14px !important;
+
+    margin-top: 4px !important;
+    margin-bottom: 4px !important;
+
+    font-size: 16px !important;
+    font-weight: 500 !important;
+
+    transition: all 0.25s ease !important;
+}
+
+/* Movie card hover */
+.stMarkdown p:hover {
+    background: #454545 !important;
+
+    border-left: 4px solid #e50914 !important;
+
+    transform: translateX(5px) !important;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3) !important;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
 @media (max-width: 768px) {
 
+    .block-container {
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+    }
+
     h1 {
         font-size: 30px !important;
+        line-height: 1.25 !important;
+
+        margin-top: 0 !important;
+        margin-bottom: 18px !important;
+
+        padding: 0 !important;
+    }
+
+    .stSelectbox {
+        padding: 13px !important;
+        margin-bottom: 7px !important;
     }
 
     .stSelectbox label {
         font-size: 16px !important;
     }
 
-    .stSelectbox [data-baseweb="select"],
-    .stSelectbox [data-baseweb="select"] > div,
-    .stSelectbox [data-baseweb="select"] div,
-    .stSelectbox [data-baseweb="select"] span,
-    .stSelectbox [data-baseweb="select"] input {
-        background-color: #ffffff !important;
+    .stSelectbox [data-baseweb="select"] {
+        background: #ffffff !important;
         color: #000000 !important;
-        -webkit-text-fill-color: #000000 !important;
     }
-
-    .stSelectbox input {
-        background-color: #ffffff !important;
-        color: #000000 !important;
-        -webkit-text-fill-color: #000000 !important;
-    }
-
-    .stButton > button {
-        min-height: 48px !important;
-        font-size: 16px !important;
-    }
-}
-
-
-/* ==============================
-   EXTRA MOBILE FIX
-   ============================== */
-
-@media (max-width: 480px) {
 
     .stSelectbox [data-baseweb="select"] * {
         color: #000000 !important;
         -webkit-text-fill-color: #000000 !important;
     }
 
-    .stSelectbox [data-baseweb="select"] {
-        background-color: #ffffff !important;
+    .stButton {
+        margin-bottom: 10px !important;
     }
 
+    .stButton > button {
+        min-height: 49px !important;
+        font-size: 16px !important;
+    }
+
+    h2 {
+        font-size: 18px !important;
+        padding: 12px 13px !important;
+        margin-bottom: 7px !important;
+    }
+
+    .stMarkdown p {
+        font-size: 15px !important;
+        padding: 9px 12px !important;
+        margin-top: 3px !important;
+        margin-bottom: 3px !important;
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+
+    .block-container {
+        padding-top: 7px !important;
+        padding-bottom: 7px !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    h1 {
+        font-size: 27px !important;
+        margin-bottom: 16px !important;
+    }
+
+    .stSelectbox {
+        padding: 11px !important;
+    }
+
+    .stSelectbox [data-baseweb="select"] {
+        min-height: 47px !important;
+    }
+
+    .stButton > button {
+        min-height: 47px !important;
+    }
+
+    h2 {
+        font-size: 17px !important;
+    }
+
+    .stMarkdown p {
+        font-size: 14px !important;
+    }
 }
